@@ -1,0 +1,69 @@
+{
+  "name": "list-of-common-names",
+  "version": "0.1.0",
+  "dependencies": {
+    "@material-ui/core": "^4.8.2",
+    "@material-ui/icons": "^4.5.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.0.25",
+    "@types/material-ui": "^0.21.7",
+    "@types/mui-datatables": "^2.13.3",
+    "@types/node": "^12.12.22",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/styled-components": "^4.4.1",
+    "css-select": "^2.1.0",
+    "htmlparser2": "^4.0.0",
+    "mui-datatables": "^2.13.3",
+    "node-fetch": "^2.6.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
+    "styled-components": "^4.4.1",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "update-data": "node -e 'require(\"./src/scripts/update-data\").run()'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuanP/list-of-common-names.git"
+  },
+  "keywords": [
+    "Common",
+    "names",
+    "List",
+    "of",
+    "common",
+    "names",
+    "popular",
+    "names"
+  ],
+  "author": "Luan Pablo",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/LuanP/list-of-common-names/issues"
+  },
+  "homepage": "https://github.com/LuanP/list-of-common-names#readme"
+}
