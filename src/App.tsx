@@ -1,5 +1,5 @@
 import React from 'react';
-import MUIDataTable, { MUIDataTableColumnOptions } from 'mui-datatables';
+import MUIDataTable, { MUIDataTableOptions } from 'mui-datatables';
 import styled, { createGlobalStyle, } from 'styled-components';
 // import Button from '@material-ui/core/Button';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -63,8 +63,9 @@ const columns = [
   },
 ];
 
-const options: MUIDataTableColumnOptions = {
+const options: MUIDataTableOptions = {
   filterType: 'checkbox',
+  selectableRows: 'none'
 };
 
 const App: React.FC = () => {
