@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/list-of-common-names/static/js/main.5f005b64.chunk.js",
+    "main.js.map": "/list-of-common-names/static/js/main.5f005b64.chunk.js.map",
+    "runtime-main.js": "/list-of-common-names/static/js/runtime-main.0f414b4a.js",
+    "runtime-main.js.map": "/list-of-common-names/static/js/runtime-main.0f414b4a.js.map",
+    "static/js/2.1f4de6f4.chunk.js": "/list-of-common-names/static/js/2.1f4de6f4.chunk.js",
+    "static/js/2.1f4de6f4.chunk.js.map": "/list-of-common-names/static/js/2.1f4de6f4.chunk.js.map",
+    "index.html": "/list-of-common-names/index.html",
+    "precache-manifest.a0f3793b42fa662d3c72bb07474e36a4.js": "/list-of-common-names/precache-manifest.a0f3793b42fa662d3c72bb07474e36a4.js",
+    "service-worker.js": "/list-of-common-names/service-worker.js",
+    "static/js/2.1f4de6f4.chunk.js.LICENSE": "/list-of-common-names/static/js/2.1f4de6f4.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f414b4a.js",
+    "static/js/2.1f4de6f4.chunk.js",
+    "static/js/main.5f005b64.chunk.js"
+  ]
+}
