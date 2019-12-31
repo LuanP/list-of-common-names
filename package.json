@@ -29,7 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "update-data": "node -e 'require(\"./src/scripts/update-data\").run()'"
+    "update-data": "node -e 'require(\"./src/scripts/update-data\").run()'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -65,5 +67,8 @@
   "bugs": {
     "url": "https://github.com/LuanP/list-of-common-names/issues"
   },
-  "homepage": "https://github.com/LuanP/list-of-common-names#readme"
+  "homepage": "https://luanp.github.io/list-of-common-names",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
 }
