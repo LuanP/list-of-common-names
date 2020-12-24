@@ -1,7 +1,7 @@
-const Transformer = () => {}
+const Transformer = () => {};
 
 Transformer.transform = (data) => {
-  return data
-}
+  return data;
+};
 
-module.exports = Transformer
+module.exports = Transformer;

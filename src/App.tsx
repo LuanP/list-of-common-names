@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import _ from 'lodash';
 import MUIDataTable, { MUIDataTableOptions } from 'mui-datatables';
 import styled, { createGlobalStyle, } from 'styled-components';
-// import Button from '@material-ui/core/Button';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import IconButton from "@material-ui/core/IconButton"
+import Tooltip from "@material-ui/core/Tooltip"
+import ShuffleIcon from "@material-ui/icons/Shuffle"
 
-import popularGivenNamesData from './data/popular-given-names.json';
+import merger from './data-merger';
 
 const theme = createMuiTheme()
 
@@ -30,8 +33,16 @@ const AppBox = styled.div`
 
 const columns = [
   {
-    name: "name",
-    label: "Name",
+    name: "givenName",
+    label: "Given Name",
+    options: {
+      filter: false,
+      sort: true,
+    }
+  },
+  {
+    name: "surname",
+    label: "Surname",
     options: {
       filter: false,
       sort: true,
@@ -46,16 +57,16 @@ const columns = [
     }
   },
   {
-    name: "region",
-    label: "Region",
+    name: "gender",
+    label: "Gender",
     options: {
       filter: true,
       sort: true,
     }
   },
   {
-    name: "gender",
-    label: "Gender",
+    name: "region",
+    label: "Region",
     options: {
       filter: true,
       sort: true,
@@ -65,16 +76,27 @@ const columns = [
 
 const options: MUIDataTableOptions = {
   filterType: 'checkbox',
-  selectableRows: 'none'
+  selectableRows: 'none',
+  rowsPerPageOptions: [10, 25, 50, 100, 500]
 };
 
 const App: React.FC = () => {
-  // const [data, setData] = useState<any[]>([])
+  const [data, setData] = useState<any[]>(merger.merge())
 
-  // const getPopularGivenNames = async () => {
-  //   const popularGivenNames = popularGivenNamesData
-  //   setData(popularGivenNames)
-  // }
+  const randomizeData = () => {
+    setData(_.shuffle(data))
+  }
+
+  options.customToolbar = () => (
+      <>
+        <Tooltip title={"Randomize Data"}>
+          <IconButton onClick={randomizeData}>
+            <ShuffleIcon />
+          </IconButton>
+        </Tooltip>
+      </>
+    );
+
 
   return (
     <MuiThemeProvider theme={theme}>
@@ -83,7 +105,7 @@ const App: React.FC = () => {
         {/* <Button variant="contained" color="primary" onClick={getPopularGivenNames}>Popular Given Names</Button> */}
         <MUIDataTable
           title={"Popular names"}
-          data={popularGivenNamesData}
+          data={data}
           columns={columns}
           options={options}
         />

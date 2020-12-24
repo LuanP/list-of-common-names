@@ -1,21 +1,21 @@
-const Util = () => {}
+const Util = () => {};
 
 Util.getText = (node, result) => {
   if (result === undefined) {
-    result = []
+    result = [];
   }
 
   if (node.children) {
     for (const child of node.children) {
-      Util.getText(child, result)
+      Util.getText(child, result);
     }
   }
 
-  if (node.type === 'text' && node.data) {
-    result.push(node.data)
+  if (node.type === "text" && node.data) {
+    result.push(node.data);
   }
 
-  return result.join(' ')
-}
+  return result.join(" ").trim();
+};
 
-module.exports = Util
+module.exports = Util;
