@@ -8,6 +8,7 @@ import Tooltip from "@material-ui/core/Tooltip"
 import ShuffleIcon from "@material-ui/icons/Shuffle"
 
 import merger from './data-merger';
+import CopyHelper from './components/CopyHelper';
 
 const theme = createMuiTheme()
 
@@ -76,12 +77,23 @@ const columns = [
 
 const options: MUIDataTableOptions = {
   filterType: 'checkbox',
-  selectableRows: 'none',
+  selectableRows: 'multiple',
+  disableToolbarSelect: true,
   rowsPerPageOptions: [10, 25, 50, 100, 500]
 };
 
 const App: React.FC = () => {
   const [data, setData] = useState<any[]>(merger.merge())
+  const [rowsSelected, setRowsSelected] = useState<any[]>([])
+
+  options.rowsSelected = rowsSelected
+  options.onRowsSelect = (_currentRowsSelected: any[], rowsSelected: any[]) => {
+    setRowsSelected(rowsSelected);
+  }
+
+  const getDataByRowIndex = (data: any, rowsSelected: any) => {
+    return _.map(rowsSelected, (obj) => data[obj.dataIndex])
+  }
 
   const randomizeData = () => {
     setData(_.shuffle(data))
@@ -109,6 +121,7 @@ const App: React.FC = () => {
           columns={columns}
           options={options}
         />
+        <CopyHelper data={getDataByRowIndex(data, rowsSelected)} />
       </AppBox>
     </MuiThemeProvider>
   );
